@@ -24,6 +24,7 @@
 - [📦 Usage](#-usage)
 - [👨‍💻 About the Author](#-about-the-author)
 - [📝 Release Notes](#-release-notes)
+  - [1.1.0](#110)
   - [1.0.3](#103)
   - [1.0.2](#102)
   - [1.0.1](#101)
