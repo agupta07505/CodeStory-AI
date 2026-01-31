@@ -64,6 +64,9 @@ I’m Animesh Gupta, a Computer Science student at IIIT Bhopal specializing in D
 
 ## 📝 Release Notes
 
+### 1.0.2
+-   Marketplace icon update to "CodeStory AI" & github repo update to "CodeStory-AI".
+
 ### 1.0.1
 -   Documentation polish.
 

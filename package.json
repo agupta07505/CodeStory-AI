@@ -2,7 +2,7 @@
   "name": "codestory-ai",
   "displayName": "CodeStory AI",
   "description": "AI-powered documentation generator using Ollama and Vertex AI. Automatically documents your code on save.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "icon": "icon.png",
   "publisher": "agupta07505",
   "author": {
@@ -12,7 +12,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/agupta07505/CodeStory"
+    "url": "https://github.com/agupta07505/CodeStory-AI"
   },
   "keywords": [
     "ai",
