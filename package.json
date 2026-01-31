@@ -1,0 +1,152 @@
+{
+  "name": "codestory-ai",
+  "displayName": "CodeStory AI",
+  "description": "AI-powered documentation generator using Ollama and Vertex AI. Automatically documents your code on save.",
+  "version": "1.0.1",
+  "icon": "icon.png",
+  "publisher": "agupta07505",
+  "author": {
+    "name": "Animesh Gupta",
+    "url": "https://github.com/agupta07505"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/agupta07505/CodeStory"
+  },
+  "keywords": [
+    "ai",
+    "documentation",
+    "ollama",
+    "vertex-ai",
+    "codestory",
+    "docs-generator",
+    "code-documentation",
+    "automatic-docs",
+    "gemini",
+    "llama",
+    "markdown",
+    "productivity",
+    "developer-tools"
+  ],
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "AI",
+    "Machine Learning",
+    "Education"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "CodeStory",
+      "properties": {
+        "codestory.provider": {
+          "type": "string",
+          "enum": [
+            "vertex",
+            "ollama"
+          ],
+          "default": "ollama",
+          "description": "Select the AI provider to use."
+        },
+        "codestory.ollamaModel": {
+          "type": "string",
+          "default": "llama3",
+          "description": "The Ollama model to use (e.g., llama3, mistral)."
+        },
+        "codestory.projectId": {
+          "type": "string",
+          "default": "",
+          "description": "Google Cloud Project ID for Vertex AI."
+        },
+        "codestory.docStyle": {
+          "type": "string",
+          "enum": [
+            "simple",
+            "concise",
+            "explained",
+            "detailed"
+          ],
+          "default": "concise",
+          "description": "Level of detail for generated documentation."
+        }
+      }
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "codestory-sidebar",
+          "title": "CodeStory",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    "views": {
+      "codestory-sidebar": [
+        {
+          "id": "codestory-settings",
+          "name": "Settings Manager"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "codestory.refreshSettings",
+        "title": "Refresh Settings",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "codestory.setProvider",
+        "title": "Set AI Provider"
+      },
+      {
+        "command": "codestory.setDocStyle",
+        "title": "Set Documentation Style"
+      },
+      {
+        "command": "codestory.setOllamaModel",
+        "title": "Set Ollama Model"
+      },
+      {
+        "command": "codestory.setProjectId",
+        "title": "Set Vertex Project ID"
+      },
+      {
+        "command": "codestory.about",
+        "title": "About Developer",
+        "icon": "$(info)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "codestory.refreshSettings",
+          "when": "view == codestory-settings",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "18.x",
+    "typescript": "^5.3.3",
+    "eslint": "^8.56.0"
+  },
+  "dependencies": {
+    "axios": "^1.6.5"
+  }
+}
