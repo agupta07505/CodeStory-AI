@@ -7,7 +7,7 @@ We welcome contributions from everyone. By participating in this project, you ag
 ## How to Contribute
 
 ### 1. Reporting Bugs
--   Check the [Issues](https://github.com/agupta07505/CodeStory/issues) tab to ensure the bug hasn't been reported.
+-   Check the [Issues](https://github.com/agupta07505/CodeStory-AI/issues) tab to ensure the bug hasn't been reported.
 -   Open a new issue with a clear title and description.
 -   Include steps to reproduce, expected behavior, and screenshots if applicable.
 
@@ -19,7 +19,7 @@ We welcome contributions from everyone. By participating in this project, you ag
 1.  **Fork** the repository.
 2.  **Clone** your fork locally:
     ```bash
-    git clone https://github.com/YOUR_USERNAME/CodeStory.git
+    git clone https://github.com/YOUR_USERNAME/CodeStory-AI.git
     ```
 3.  **Create a branch** for your feature/fix:
     ```bash

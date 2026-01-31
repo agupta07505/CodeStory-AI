@@ -64,10 +64,23 @@ export function activate(context: vscode.ExtensionContext) {
         });
     }));
 
+    context.subscriptions.push(vscode.commands.registerCommand('codestory.toggleEnabled', async () => {
+        const config = vscode.workspace.getConfiguration('codestory');
+        const current = config.get<boolean>('enabled', true);
+        await config.update('enabled', !current, vscode.ConfigurationTarget.Global);
+        vscode.window.showInformationMessage(`CodeStory is now ${!current ? 'Enabled' : 'Disabled'}`);
+        settingsProvider.refresh();
+    }));
+
     // Cache for file hashes
     const fileHashes = new Map<string, string>();
 
     const disposable = vscode.workspace.onDidSaveTextDocument(async (document: vscode.TextDocument) => {
+        const config = vscode.workspace.getConfiguration('codestory');
+        if (!config.get<boolean>('enabled', true)) {
+            return;
+        }
+
         if (document.uri.scheme !== 'file') {
             return;
         }

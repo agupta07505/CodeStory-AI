@@ -2,7 +2,7 @@
   "name": "codestory-ai",
   "displayName": "CodeStory AI",
   "description": "AI-powered documentation generator using Ollama and Vertex AI. Automatically documents your code on save.",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "icon": "icon.png",
   "publisher": "agupta07505",
   "author": {
@@ -45,6 +45,11 @@
     "configuration": {
       "title": "CodeStory",
       "properties": {
+        "codestory.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable or disable automatic documentation generation."
+        },
         "codestory.provider": {
           "type": "string",
           "enum": [
@@ -95,6 +100,11 @@
       ]
     },
     "commands": [
+      {
+        "command": "codestory.toggleEnabled",
+        "title": "Toggle Extension Enabled/Disabled",
+        "icon": "$(Rd)"
+      },
       {
         "command": "codestory.refreshSettings",
         "title": "Refresh Settings",

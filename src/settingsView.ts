@@ -30,8 +30,16 @@ export class SettingsTreeProvider implements vscode.TreeDataProvider<SettingItem
         const style = config.get<string>('docStyle', 'explained');
         const model = config.get<string>('ollamaModel', 'llama3');
         const projectId = config.get<string>('projectId', 'Not Set');
+        const enabled = config.get<boolean>('enabled', true);
 
         return Promise.resolve([
+            new SettingItem(
+                'Status',
+                enabled ? 'Enabled' : 'Disabled',
+                vscode.TreeItemCollapsibleState.None,
+                'codestory.toggleEnabled',
+                enabled ? 'Click to Disable' : 'Click to Enable'
+            ),
             new SettingItem(
                 'AI Provider',
                 provider,
